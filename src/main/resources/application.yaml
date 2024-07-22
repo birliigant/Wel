@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: WelGame
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://116.198.201.236:3306/Sipc_WelGame?useSSL=false
+    username: root
+    password: 123
+server:
+  port: 8080
+mybatis:
+  type-aliases-package: com.sipc.welgame.pojo.domain
+  configuration:
+    use-generated-keys: true
+    default-executor-type: REUSE
+    use-actual-param-name: true
