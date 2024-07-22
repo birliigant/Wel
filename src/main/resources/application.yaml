@@ -3,7 +3,7 @@ spring:
     name: WelGame
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://116.198.201.236:3306/Sipc_WelGame?useSSL=false
+    url: jdbc:mysql://192.168.115.23:3308//Sipc_WelGame?useSSL=false
     username: root
     password: 123
 server:
