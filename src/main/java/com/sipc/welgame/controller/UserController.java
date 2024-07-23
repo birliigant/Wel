@@ -5,6 +5,7 @@ import com.sipc.welgame.pojo.model.request.LoginRequest;
 import com.sipc.welgame.pojo.model.request.SelectRequest;
 import com.sipc.welgame.pojo.model.result.TokenResult;
 import com.sipc.welgame.pojo.model.result.PageResult;
+import com.sipc.welgame.pojo.model.result.TotalResult;
 import com.sipc.welgame.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,4 +27,8 @@ public class UserController {
         return userService.select(request);
     }
 
+    @PostMapping("/total")
+    CommonResult<TotalResult> total(){
+        return userService.total();
+    }
 }
