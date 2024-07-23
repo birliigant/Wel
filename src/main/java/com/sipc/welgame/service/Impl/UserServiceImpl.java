@@ -7,6 +7,7 @@ import com.sipc.welgame.pojo.domain.Page;
 import com.sipc.welgame.pojo.domain.UserInfo;
 import com.sipc.welgame.pojo.model.CommonResult;
 import com.sipc.welgame.pojo.model.TokenModel;
+import com.sipc.welgame.pojo.model.request.BlankRequest;
 import com.sipc.welgame.pojo.model.request.LoginRequest;
 import com.sipc.welgame.pojo.model.request.SelectRequest;
 import com.sipc.welgame.pojo.model.result.TokenResult;
@@ -76,7 +77,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public CommonResult<TotalResult> total() {
+    public CommonResult<TotalResult> total(BlankRequest request) {
         TokenModel tokenModel = TokenHandler.getTokenModelThreadLocal();
         UserInfo userInfo = userMapper.getByStudentId(tokenModel.getStudentId());
         if (ObjectUtil.isEmpty(userInfo)){

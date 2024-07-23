@@ -1,6 +1,7 @@
 package com.sipc.welgame.controller;
 
 import com.sipc.welgame.pojo.model.CommonResult;
+import com.sipc.welgame.pojo.model.request.BlankRequest;
 import com.sipc.welgame.pojo.model.request.LoginRequest;
 import com.sipc.welgame.pojo.model.request.SelectRequest;
 import com.sipc.welgame.pojo.model.result.TokenResult;
@@ -26,9 +27,8 @@ public class UserController {
     CommonResult<PageResult> select(@RequestBody SelectRequest request){
         return userService.select(request);
     }
-
     @PostMapping("/total")
-    CommonResult<TotalResult> total(){
-        return userService.total();
+    CommonResult<TotalResult> total(@RequestBody BlankRequest request){
+        return userService.total(request);
     }
 }
