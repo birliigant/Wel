@@ -12,5 +12,5 @@ import com.sipc.welgame.pojo.model.result.TotalResult;
 public interface UserService {
     CommonResult<TokenResult> login(LoginRequest request);
     CommonResult<PageResult> select(SelectRequest request);
-    CommonResult<TotalResult> total(BlankRequest request);
+    CommonResult<TotalResult> total();
 }

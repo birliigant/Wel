@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public CommonResult<TotalResult> total(BlankRequest request) {
+    public CommonResult<TotalResult> total() {
         TokenModel tokenModel = TokenHandler.getTokenModelThreadLocal();
         UserInfo userInfo = userMapper.getByStudentId(tokenModel.getStudentId());
         if (ObjectUtil.isEmpty(userInfo)){
