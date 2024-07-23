@@ -11,6 +11,7 @@ import com.sipc.welgame.pojo.model.request.LoginRequest;
 import com.sipc.welgame.pojo.model.request.SelectRequest;
 import com.sipc.welgame.pojo.model.result.TokenResult;
 import com.sipc.welgame.pojo.model.result.PageResult;
+import com.sipc.welgame.pojo.model.result.TotalResult;
 import com.sipc.welgame.service.UserService;
 import com.sipc.welgame.utils.JwtUtils;
 import lombok.AllArgsConstructor;
@@ -70,6 +71,18 @@ public class UserServiceImpl implements UserService {
         String page = pageMap.get(map.get(request.getName()));
         PageResult result = new PageResult();
         result.setPage(page);
+        result.setTotalNum(userInfo.getTotal());
+        return CommonResult.success(result);
+    }
+
+    @Override
+    public CommonResult<TotalResult> total() {
+        TokenModel tokenModel = TokenHandler.getTokenModelThreadLocal();
+        UserInfo userInfo = userMapper.getByStudentId(tokenModel.getStudentId());
+        if (ObjectUtil.isEmpty(userInfo)){
+            return CommonResult.fail();
+        }
+        TotalResult result = new TotalResult();
         result.setTotalNum(userInfo.getTotal());
         return CommonResult.success(result);
     }
