@@ -30,9 +30,7 @@ public class JwtInterceptor implements HandlerInterceptor {
             response.setCharacterEncoding("UTF-8");
             response.setContentType("application/json; charset=utf-8");
             ObjectMapper objectMapper = new ObjectMapper();
-
             response.getWriter().println(objectMapper.writeValueAsString(CommonResult.fail()));
-
             return false;
         }
         TokenHandler.setTokenModelThreadLocal(JwtUtils.getTokenModelByToken(token));

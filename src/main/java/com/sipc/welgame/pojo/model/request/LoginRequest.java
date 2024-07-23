@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class LoginRequest {
-    private int studentId;
+    private Integer studentId;
     private String name;
 }
