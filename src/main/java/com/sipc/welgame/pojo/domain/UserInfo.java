@@ -27,15 +27,15 @@ public class UserInfo {
     private int gameLevel;
     @TableField("algorithm_level")
     private int algorithmLevel;
-    @TableField("loT_level")
-    private int loTLevel;
+    @TableField("ioT_level")
+    private int ioTLevel;
     private int total;
     public void pack(Map<String,Integer> map){
         map.put("Backend",backendLevel);
         map.put("Frontend",frontendLevel);
         map.put("Product",productLevel);
         map.put("Secure",secureLevel);
-        map.put("LoT",loTLevel);
+        map.put("IoT",ioTLevel);
         map.put("Game",gameLevel);
         map.put("Algorithm",algorithmLevel);
         map.put("Total",total);

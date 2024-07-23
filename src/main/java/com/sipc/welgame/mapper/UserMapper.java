@@ -23,8 +23,8 @@ public interface UserMapper extends BaseMapper<UserInfo> {
     int updateSecureLevelById(UserInfo userInfo);
     @Update("UPDATE user SET algorithm_level = #{algorithmLevel}, total = #{total} WHERE student_id = #{studentId}")
     int updateAlgorithmLevelById(UserInfo userInfo);
-    @Update("UPDATE user SET loT_level = #{loTLevel}, total = #{total} WHERE student_id = #{studentId}")
-    int updateLoTLevelById(UserInfo userInfo);
+    @Update("UPDATE user SET ioT_level = #{loTLevel}, total = #{total} WHERE student_id = #{studentId}")
+    int updateIoTLevelById(UserInfo userInfo);
     @Update("UPDATE user SET product_level = #{productLevel}, total = #{total} WHERE student_id = #{studentId}")
     int updateProductLevelById(UserInfo userInfo);
     @Update("UPDATE user SET game_level = #{gameLevel}, total = #{total} WHERE student_id = #{studentId}")

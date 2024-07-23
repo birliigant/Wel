@@ -28,10 +28,10 @@ public class IoTServiceImpl implements IoTService {
         if (StrUtil.isEmpty(request.getAnswer()) ||  !request.getAnswer().equals(IoT.IOT_ANSWER_ONE)){
             return CommonResult.fail();
         }
-        if (userInfo.getLoTLevel() == 1){
-            userInfo.setLoTLevel(userInfo.getLoTLevel()+1);
+        if (userInfo.getIoTLevel() == 1){
+            userInfo.setIoTLevel(userInfo.getIoTLevel()+1);
             userInfo.setTotal(userInfo.getTotal()+1);
-            userMapper.updateLoTLevelById(userInfo);
+            userMapper.updateIoTLevelById(userInfo);
         }
         TotalResult result = new TotalResult();
         result.setTotalNum(userInfo.getTotal());
@@ -45,10 +45,10 @@ public class IoTServiceImpl implements IoTService {
         if (StrUtil.isEmpty(request.getAnswer()) ||  !request.getAnswer().equals(IoT.IOT_ANSWER_TWO)){
             return CommonResult.fail();
         }
-        if (userInfo.getLoTLevel() == 2){
-            userInfo.setLoTLevel(userInfo.getLoTLevel()+1);
+        if (userInfo.getIoTLevel() == 2){
+            userInfo.setIoTLevel(userInfo.getIoTLevel()+1);
             userInfo.setTotal(userInfo.getTotal()+1);
-            userMapper.updateLoTLevelById(userInfo);
+            userMapper.updateIoTLevelById(userInfo);
         }
         TotalResult result = new TotalResult();
         result.setTotalNum(userInfo.getTotal());
@@ -62,10 +62,10 @@ public class IoTServiceImpl implements IoTService {
         if (StrUtil.isEmpty(request.getAnswer()) ||  !request.getAnswer().equals(IoT.IOT_ANSWER_THREE)){
             return CommonResult.fail();
         }
-        if (userInfo.getLoTLevel() == 3){
-            userInfo.setLoTLevel(userInfo.getLoTLevel()+1);
+        if (userInfo.getIoTLevel() == 3){
+            userInfo.setIoTLevel(userInfo.getIoTLevel()+1);
             userInfo.setTotal(userInfo.getTotal()+1);
-            userMapper.updateLoTLevelById(userInfo);
+            userMapper.updateIoTLevelById(userInfo);
         }
         TotalResult result = new TotalResult();
         result.setTotalNum(userInfo.getTotal());
@@ -74,11 +74,11 @@ public class IoTServiceImpl implements IoTService {
 
     @Override
     public CommonResult<PrivateKeyResult> back(PublicKeyRequest request) {
-        if (StrUtil.isEmpty(request.getPublicKey()) || !request.getPublicKey().equals(PublicKey.LOT_KEY)){
+        if (StrUtil.isEmpty(request.getPublicKey()) || !request.getPublicKey().equals(PublicKey.IOT_KEY)){
             return CommonResult.fail();
         }
         PrivateKeyResult result = new PrivateKeyResult();
-        result.setPrivateKey(request.getPrivateKey()+PrivateKey.LOT_KEY);
+        result.setPrivateKey(request.getPrivateKey()+PrivateKey.IOT_KEY);
         return CommonResult.success(result);
     }
 }
