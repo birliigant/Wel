@@ -29,6 +29,6 @@ public class UserController {
     }
     @PostMapping("/total")
     CommonResult<TotalResult> total(BlankRequest request){
-        return userService.total(request);
+        return userService.total();
     }
 }
